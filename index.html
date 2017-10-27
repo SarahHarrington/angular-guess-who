@@ -12,7 +12,7 @@
     <h1>Guess Who Angular</h1>
     <div ng-controller="guessWhoController as guessWho">
         <h2>{{guessWho.guess}}</h2>
-        <input ng-model="guessWho.name" type="text">
+        <input ng-model="guessWho.name" type="text"> <!-- binds the value to the angular contorller? -->
         <input ng-model="guessWho.github" type="text">
         <button ng-click="guessWho.newPeople()">Submit</button>
         <div ng-repeat="person in guessWho.people">

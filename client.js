@@ -12,19 +12,17 @@ myApp.controller('guessWhoController', function(){
     ];
     
     guessWho.people = people;
-    guessWho.guess = 'Who is that?'
+    guessWho.guess = 'Who is that?' //default value that is replaced when the function below runs
     
+    //pushes what is put in the inputs in HTML to the people array
     guessWho.newPeople = function() {
-        people.push({name: guessWho.name, github: guessWho.github});
-        console.log('people', people);
+        people.push({name: guessWho.name, github: guessWho.github, show: false});
     }
 
+    //shows the persons name on the top of the page if the image is clicked
     guessWho.picture = function(person) {
-        console.log('clicked picture');
-        person.show = !person.show;
-        guessWho.guess = person.name;
+        person.show = !person.show; //changes the person.show from false/true
+        guessWho.guess = person.name; //guessWho.guess is the expression that person.name goes to for display
 
     }
-
-
 })
