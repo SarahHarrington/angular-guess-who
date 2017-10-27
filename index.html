@@ -11,10 +11,11 @@
 <body>
     <h1>Guess Who Angular</h1>
     <div ng-controller="guessWhoController as guessWho">
-        <h2>{{guessWho.guess}}</h2>
+        <h2 ng-mouseleave="myStyle={color: 'black'}" ng-mouseover="myStyle={color: 'plum'}" ng-style="myStyle">{{guessWho.guess}}</h2>
         <input ng-model="guessWho.name" type="text"> <!-- binds the value to the angular contorller? -->
         <input ng-model="guessWho.github" type="text">
         <button ng-click="guessWho.newPeople()">Submit</button>
+        <!-- <button ng-click="myStyle={color: 'plum'}">Change Color</button> -->
         <div ng-repeat="person in guessWho.people">
             <img ng-click="guessWho.picture(person)" ng-src="https://github.com/{{person.github}}.png?size=80">
         </div>
